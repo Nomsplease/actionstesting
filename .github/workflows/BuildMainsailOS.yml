@@ -11,6 +11,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
+      - name: Download
+        run: transmission-cli -w src/image/ 2020-08-20-raspios-buster-armhf-lite.zip.torrent
+
+      - name: List files
+        run: ls -lash src/image/
       
-      - name: Run Make Build
-        run: make build
+      #- name: Run Make Build
+      #  run: make build
