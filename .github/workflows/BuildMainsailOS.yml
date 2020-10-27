@@ -16,7 +16,7 @@ jobs:
         run: sudo apt install -y transmission-cli
 
       - name: Download
-        run: transmission-cli -w src/image/ 2020-08-20-raspios-buster-armhf-lite.zip.torrent
+        run: aria2c -d src/image/ --seed-time=0 https://downloads.raspberrypi.org/raspios_lite_armhf_latest.torrent
 
       - name: List files
         run: ls -lash src/image/
