@@ -12,11 +12,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - name: echo pwd
-        run: pwd
-      
-      - name: List Stuff
-        run: ls -lash
-      
-      - name: compose?
-        run: docker-compose
+      - name: Run Make Build
+        run: make build
