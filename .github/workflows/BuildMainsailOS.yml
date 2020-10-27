@@ -18,8 +18,10 @@ jobs:
       - name: Download
         run: aria2c -d src/image/ --seed-time=0 https://downloads.raspberrypi.org/raspios_lite_armhf_latest.torrent
 
-      - name: List files
-        run: ls -lash src/image/
-      
-      #- name: Run Make Build
-      #  run: make build
+      - name: Cleanup Files
+        run: |
+          rm -rf src/image/*.zip.torrent
+          mv src/image/*.zip src/image/raspbian_latest-raspbian.zip
+          
+      - name: Run Make Verify
+        run: make verifyimage
