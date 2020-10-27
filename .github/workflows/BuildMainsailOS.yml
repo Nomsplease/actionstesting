@@ -17,3 +17,6 @@ jobs:
       
       - name: List Stuff
         run: ls -lash
+      
+      - name: compose?
+        run: docker-compose
