@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: dpkg list
-        run: sudo dpkg -l
+        run: sudo apt install -y transmission-cli
 
       - name: Download
         run: transmission-cli -w src/image/ 2020-08-20-raspios-buster-armhf-lite.zip.torrent
