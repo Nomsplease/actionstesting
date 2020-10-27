@@ -12,9 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: dpkg list
-        run: sudo apt install -y transmission-cli
-
       - name: Download
         run: aria2c -d src/image/ --seed-time=0 https://downloads.raspberrypi.org/raspios_lite_armhf_latest.torrent
 
@@ -22,6 +19,6 @@ jobs:
         run: |
           rm -rf src/image/*.zip.torrent
           mv src/image/*.zip src/image/raspbian_latest-raspbian.zip
-          
-      - name: Run Make Verify
-        run: make verifyimage
+
+      - name: Run the Build
+        run: make build
