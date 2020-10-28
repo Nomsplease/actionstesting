@@ -2,7 +2,7 @@ all: build
 
 build: verifyimage
 	docker-compose up -d
-	docker exec -T mainsailos-build build
+	docker exec -i mainsailos-build build
 	docker-compose down
 
 verifyimage:
