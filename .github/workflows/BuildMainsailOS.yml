@@ -27,12 +27,7 @@ jobs:
           submodules: true
 
       - name: Download Raspbian Source Image
-        run: aria2c -d src/image/ --seed-time=0 https://downloads.raspberrypi.org/raspios_lite_armhf_latest.torrent
-
-      - name: Cleanup Files before build
-        run: |
-          rm -rf src/image/*.zip.torrent
-          mv src/image/*.zip src/image/raspbian_latest-raspbian.zip
+        run: aria2c -d repository/src/image/ --seed-time=0 https://downloads.raspberrypi.org/raspios_lite_armhf_latest.torrent
       
       - name: Update CustomPiOS Paths
         run: cd repository/src && ../../CustomPiOS/src/update-custompios-paths
