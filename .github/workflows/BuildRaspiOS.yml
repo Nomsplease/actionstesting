@@ -1,0 +1,25 @@
+name: Build MainsailOS - RapsiOS
+on:
+  push:
+  pull_request:
+    types: [ opened, edited ]
+
+jobs:
+  raspiosbuild:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout MainsailOS Project
+        uses: actions/checkout@v2
+        with:
+          repository: ${{ github.repository }}
+          path: repository
+          submodules: true
+
+      - name: Create dummy file
+        run: echo test > file.txt
+
+      - uses: actions/upload-artifact@v1
+        with:
+          name: file.txt
+          path: file.txt
