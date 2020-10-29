@@ -1,7 +1,7 @@
 name: Release MainsailOS - RapsiOS
 on:
   release:
-    types: [ published, prereleased, released ]
+    types: [ published ]
 
 jobs:
   raspiosbuild:
