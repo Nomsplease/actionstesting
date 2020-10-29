@@ -23,6 +23,9 @@ jobs:
         with:
           name: file.txt
           path: file.txt
+
+      - name: What Event
+        run: echo $github.event_name
       
       - name: Upload RaspiOS Asset
         if: ${{ github.event_name == 'release' }}
